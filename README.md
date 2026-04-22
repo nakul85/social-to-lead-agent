@@ -31,7 +31,7 @@ social-to-lead-agent/
 ## How to Run
 
 1. Clone the repository:
-git clone https://github.com/your-username/social-to-lead-agent.git  
+git clone https://github.com/nakul85/social-to-lead-agent.git  
 cd social-to-lead-agent  
 
 2. Install dependencies:
