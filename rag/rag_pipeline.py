@@ -23,5 +23,4 @@ def load_knowledge():
 def create_vectorstore():
     docs = load_knowledge()
     embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-    vectorstore = FAISS.from_documents(docs, embeddings)
-    return vectorstore
+    return FAISS.from_documents(docs, embeddings)
