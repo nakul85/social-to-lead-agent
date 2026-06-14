@@ -60,3 +60,32 @@ The lead capture process is implemented as a mock function, which is only trigge
 To integrate this agent with WhatsApp, a webhook-based setup can be used. A backend service (such as Flask or FastAPI) would receive incoming messages from the WhatsApp Business API. Each message would be passed to the agent along with a session state for that user.
 
 The agent’s response would then be sent back to the user through the WhatsApp API. For handling multiple users and maintaining conversation history, a storage system like Redis or a database can be used. This allows the agent to function in real time and manage multiple conversations efficiently.
+
+## Tech Stack
+
+* Python
+* LangGraph
+* FAISS
+* HuggingFace Embeddings
+* Sentence Transformers
+* JSON Knowledge Base
+* State-based Workflow Management
+
+## Workflow Overview
+
+1. User sends a query to the conversational agent.
+2. The intent classifier determines the user's intent (greeting, pricing inquiry, or high purchase intent).
+3. Relevant information is retrieved from the knowledge base using a Retrieval-Augmented Generation (RAG) pipeline powered by FAISS similarity search.
+4. The agent generates context-aware responses while maintaining conversation state across multiple turns.
+5. When high purchase intent is detected, the agent initiates a lead qualification workflow.
+6. User details such as name, email, and preferred platform are collected.
+7. A simulated backend function captures the qualified lead for further processing.
+
+## Future Enhancements
+
+* Integrate with WhatsApp Business API for real-time conversations.
+* Replace the local JSON knowledge base with a database-backed document store.
+* Introduce Redis for scalable session and memory management.
+* Deploy the solution using FastAPI and Docker.
+* Connect the lead capture workflow with a CRM platform such as HubSpot or Salesforce.
+
